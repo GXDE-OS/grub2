@@ -10,6 +10,7 @@ gettext-quiet.patch
 install-efi-fallback.patch
 mkconfig-ubuntu-recovery.patch
 install-locale-langpack.patch
+skip-directory-check.patch
 mkconfig-nonexistent-loopback.patch
 default-grub-d.patch
 blacklist-1440x900x32.patch
@@ -144,6 +145,14 @@ cve-2025-jan/fs-ext2-Rework-out-of-bounds-read-for-inline-and-external.patch
 cve-2025-jan/fs-xfs-Fix-grub_xfs_iterate_dir-return-value-in-case-of-f.patch
 cve-2025-jan/fs-xfs-Propagate-incorrect-inode-error-from-grub_xfs_read.patch
 cve-2025-jan/fs-xfs-Handle-root-inode-read-failure-in-grub_xfs_mount.patch
+cve-2025-nov/commands-test-Fix-error-in-recursion-depth-calculati.patch
+cve-2025-nov/kern-file-Call-grub_dl_unref-after-fs-fs_close.patch
+cve-2025-nov/net-net-Unregister-net_set_vlan-command-on-unload.patch
+cve-2025-nov/gettext-gettext-Unregister-gettext-command-on-module.patch
+cve-2025-nov/normal-main-Unregister-commands-on-module-unload.patch
+cve-2025-nov/tests-lib-functional_test-Unregister-commands-on-mod.patch
+cve-2025-nov/commands-usbtest-Use-correct-string-length-field.patch
+cve-2025-nov/commands-usbtest-Ensure-string-length-is-sufficient-.patch
 0001_grub2_2.02_beta3-4_deepin-gfxmode-mod.patch
 0003-fix_grub_efidisk_open_logic.patch
 0006-fix-loongson-laptop-blurry-screen.patch
@@ -203,3 +212,20 @@ mips/0012-kern-efi-mm-mips64-allocate-more-memory-at-initializ.patch
 mips/0013-fix-include-add-a-small-header-to-dummy-boot.h-and-t.patch
 mips/0014-loader-mips64-linux-properly-prepare-memory-for-init.patch
 mips/0015-fix-util-grub-mkimagexx-unconditionaly-use-64-bit-ad.patch
+uniontech-mips-set-lang-c.patch
+
+# SW64 support
+sw64/0001-sw64-Add-early-startup-code.patch
+sw64/0002-sw64-Add-Linux-load-logic.patch
+sw64/0003-sw64-Add-awareness-for-SW64-reloations.patch
+sw64/0004-sw64-Add-auxiliary-files.patch
+sw64/0005-sw64-Add-to-build-system.patch
+sw64/0006-sw64-drop-all-efi_call-wrappers.patch
+sw64/0007-sw64-fix-efi-and-peimage-build-issues.patch
+
+# backport: fix riscv64 rdcycle
+use-time-register-in-grub_efi_get_time_ms.patch
+
+deepin/0006-grub-install-support-secureboot-detect-for-loongarch.patch
+uniontech-mkconfig_lib-suppress-stderr-for-grub-probe-in-uses_abstraction.patch
+uniontech-update-zh-cn-translate.patch
