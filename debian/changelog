@@ -1,3 +1,9 @@
+grub2 (2:2.12-7deepin14.1) UNRELEASED; urgency=medium
+
+  * 调整版本号覆盖 debian13 backport 的 grub
+
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 09 Jun 2026 18:53:13 +0800
+
 grub2 (2.12-7deepin14) unstable; urgency=medium
 
   * fix(sw64): fix EFI call compatibility and PE machine detection
