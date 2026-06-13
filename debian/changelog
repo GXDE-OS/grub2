@@ -1,3 +1,9 @@
+grub2 (3:2.12-1deepin18) UNRELEASED; urgency=medium
+
+  * 调整版本号
+
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 13 Jun 2026 13:32:23 +0800
+
 grub2 (2.12-1deepin18) unstable; urgency=medium
 
   * add translate for shell.
