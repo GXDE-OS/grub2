@@ -43,11 +43,7 @@ export CPPFLAGS :=
 export CFLAGS :=
 export LDFLAGS :=
 
-ifeq (,$(shell command -v qemu-system-i386))
 with_check := no
-else
-with_check := yes
-endif
 
 confflags = \
 	PACKAGE_VERSION="$(deb_version)" PACKAGE_STRING="GRUB $(deb_version)" \
