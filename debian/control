@@ -315,7 +315,8 @@ Package: grub-efi-amd64-bin
 Architecture: i386 kopensolaris-i386 any-amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-common (= ${binary:Version})
 Recommends: grub-efi-amd64-signed [amd64], efibootmgr [linux-any]
-Replaces: grub2 (<< ${source:Version}), grub-common (<= 1.97~beta2-1), grub-efi-amd64 (<< 1.99-1)
+Replaces: grub2 (<< ${source:Version}), grub-common (<= 1.97~beta2-1), grub-efi-amd64 (<< 1.99-1), grub-efi-amd64-unsigned
+Conflicts: grub-efi-amd64-unsigned
 Breaks: grub-efi-amd64-signed (<< 1+2.12~rc1)
 Multi-Arch: foreign
 XB-Efi-Vendor: ${efi:Vendor}
@@ -478,6 +479,8 @@ Package: grub-efi-arm64-bin
 Architecture: any-arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-common (= ${binary:Version})
 Breaks: grub-efi-arm64-signed (<< 1+2.12~rc1)
+Replaces: grub-efi-arm64-unsigned
+Conflicts: grub-efi-arm64-unsigned
 Recommends: grub-efi-arm64-signed [arm64], efibootmgr [linux-any]
 Multi-Arch: foreign
 XB-Efi-Vendor: ${efi:Vendor}
@@ -536,6 +539,8 @@ Package: grub-efi-riscv64-bin
 Architecture: any-riscv64
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-common (>= 2.02~beta2-9)
 Recommends: efibootmgr [linux-any]
+Replaces: grub-efi-riscv64-unsigned
+Conflicts: grub-efi-riscv64-unsigned
 Multi-Arch: foreign
 XB-Efi-Vendor: ${efi:Vendor}
 Description: GRand Unified Bootloader, version 2 (riscv64 UEFI modules)
@@ -586,6 +591,8 @@ Package: grub-efi-loong64-bin
 Architecture: any-loong64
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-common
 Recommends: efibootmgr [linux-any]
+Replaces: grub-efi-loong64-unsigned
+Conflicts: grub-efi-loong64-unsigned
 Multi-Arch: foreign
 XB-Efi-Vendor: ${efi:Vendor}
 Description: GRand Unified Bootloader, version 2 (loong64 UEFI modules)
