@@ -1,9 +1,10 @@
-grub2 (3:2.12-1deepin19) UNRELEASED; urgency=medium
+grub2 (3:2.12-1deepin20) UNRELEASED; urgency=medium
 
   * 调整版本号
-  * 修复与 grub-efi-xxx-bin 冲突的问题
+  * 修复与 grub-efi-xxx-bin 冲突导致无法正确安装的问题
+  * 支持加载自定义设备树 /boot/dtb-$(uname -r)
 
- -- gfdgd_xi <3025613752@qq.com>  Wed, 17 Jun 2026 20:33:40 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 02 Aug 2026 09:31:12 +0800
 
 grub2 (2.12-1deepin18) unstable; urgency=medium
 

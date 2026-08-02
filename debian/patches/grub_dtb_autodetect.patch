@@ -1,0 +1,35 @@
+Index: grub2/util/grub.d/10_linux.in
+===================================================================
+--- grub2.orig/util/grub.d/10_linux.in
++++ grub2/util/grub.d/10_linux.in
+@@ -186,6 +186,11 @@ linux_entry ()
+   sed "s/^/$submenu_indentation/" << EOF
+ 	linux	${rel_dirname}/${basename} root=${linux_root_device_thisversion} ro ${args}
+ EOF
++  if test -n "${dtb}" ; then
++    sed "s/^/$submenu_indentation/" << EOF
++	devicetree ${rel_dirname}/${dtb}
++EOF
++  fi
+   if test -n "${initrd}" ; then
+     # TRANSLATORS: ramdisk isn't identifier. Should be translated.
+ #    if [ x"$quiet_boot" = x0 ] || [ x"$type" != xsimple ]; then
+@@ -348,6 +353,18 @@ for linux in ${reverse_sorted_list}; do
+     gettext_printf "Found initrd image: %s\n" "$(echo $initrd_display)" >&2
+   fi
+ 
++  # Auto-detect device tree blob (dtb) like initrd
++  dtb=
++  for i in "dtb-${version}" "dtb-${alt_version}" "dtb"; do
++    if test -e "${dirname}/${i}" ; then
++      dtb="${i}"
++      break
++    fi
++  done
++  if test -n "${dtb}" ; then
++    gettext_printf "Found device tree image: %s\n" "${dirname}/${dtb}" >&2
++  fi
++
+   config=
+   for i in "${dirname}/config-${version}" "${dirname}/config-${alt_version}" "/etc/kernels/kernel-config-${version}" ; do
+     if test -e "${i}" ; then
